@@ -5,22 +5,22 @@ using UnityEngine;
 public class Target : MonoBehaviour {
     public float moveSpeed = 0.1f;
     public float waitTime = 1.0f;
+    public int score;
+    public int penalty;
 
     private const float TOP = 0.15f;
     private const float BOTTOM = -1.5f;
 
+    private GameManager gameManager;
     private bool fullyAppeared = false;
     private float timer = 0.0f;
 
-    public int score;
-
     // Start is called before the first frame update
     void Start() {
-
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
         // move mole up when not fully appeared
         if (!fullyAppeared) {
             transform.Translate(0, moveSpeed, 0);

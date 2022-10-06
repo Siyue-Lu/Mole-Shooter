@@ -5,13 +5,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public GameObject projectile;
     public AudioClip hitSFX;
+    private GameManager gameManager;
     public float power = 200.0f;
     private const float BOTTOM = -1.5f;
 
-    // Update is called once per frame
+    private void Start() {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+    }
+
     void Update() {
         // create ray from camera to point on screen on mouse click to shoot projectile
-        if (Input.GetMouseButtonDown(0)) {
+        if (gameManager.isGameActive && Input.GetMouseButtonDown(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             // instantiate a hammer towards clicked direction on clicking any game object
