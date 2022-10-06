@@ -8,9 +8,6 @@ public class PlayerController : MonoBehaviour {
     public float power = 200.0f;
     private const float BOTTOM = -1.5f;
 
-    // Start is called before the first frame update
-    void Start() { }
-
     // Update is called once per frame
     void Update() {
         // create ray from camera to point on screen on mouse click to shoot projectile

@@ -9,9 +9,10 @@ public class GameManager : MonoBehaviour {
     private const float ZOFFSET = -3.5f;
     private const float SPAWNPOSY = -1.4f;
 
-    // public TextMeshProUGUI scoreText;
     private float spawnRate = 1.5f;
     private int score;
+    private float time;
+
     // Start is called before the first frame update
     void Start() {
         StartCoroutine(SpawnTarget());
@@ -25,7 +26,4 @@ public class GameManager : MonoBehaviour {
             Instantiate(target, new Vector3(holePos.x + XOFFSET, SPAWNPOSY, holePos.z + ZOFFSET), target.transform.rotation);
         }
     }
-
-    // Update is called once per frame
-    void Update() { }
 }
