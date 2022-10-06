@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Mole Shooter.unity
+    guid: f775565582fc1ea4db16b5787e7c81b1
   m_configObjects: {}

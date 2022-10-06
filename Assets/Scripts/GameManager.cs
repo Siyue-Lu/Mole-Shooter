@@ -72,6 +72,8 @@ public class GameManager : MonoBehaviour {
         isGameActive = false;
         isOver = true;
         gameOverText.text = "Game Over\r\nScore: " + score;
+        scoreText.gameObject.SetActive(false);
+        timeText.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
